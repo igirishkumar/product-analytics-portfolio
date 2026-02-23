@@ -1,9 +1,6 @@
 <!-- ========================= -->
 <!-- 📌 PROJECT BANNER (Optional) -->
 <!-- Replace the image below with your own banner -->
-<p align="center">
-  <img src="https://via.placeholder.com/1200x250.png?text=Smart+Alert+Tooltip+%7C+A%2FB+Test+Evaluation" alt="Project Banner">
-</p>
 
 <h1 align="center">📊 A/B Test Evaluation — Smart Alert Tooltip</h1>
 
