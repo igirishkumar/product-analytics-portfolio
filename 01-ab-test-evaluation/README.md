@@ -107,16 +107,16 @@ Ensured country distribution and signup dates were balanced.
 ![Conversion Rate](charts/conversion_rate.png)
 
 ### **95% Confidence Intervals**  
-![CI Plot](01-ab-test-evaluation\charts\CI.png)
+![CI Plot](charts/CI.png)
 
 ### **Lift Chart**  
-![Lift Chart](01-ab-test-evaluation\charts\lift.png)
+![Lift Chart](charts/lift.png)
 
 ### **Feature Usage Comparison**  
-![Feature Usage](01-ab-test-evaluation\charts\feature_usage.png)
+![Feature Usage](charts/feature_usage.png)
 
 ### **Guardrail Metrics**  
-![Guardrails](01-ab-test-evaluation\charts\guardrails.png)
+![Guardrails](charts/guardrails.png)
 
 ---
 
