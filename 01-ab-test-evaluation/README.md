@@ -1,181 +1,180 @@
+<!-- ========================= -->
+<!-- 📌 PROJECT BANNER (Optional) -->
+<!-- Replace the image below with your own banner -->
+<p align="center">
+  <img src="https://via.placeholder.com/1200x250.png?text=Smart+Alert+Tooltip+%7C+A%2FB+Test+Evaluation" alt="Project Banner">
+</p>
 
+<h1 align="center">📊 A/B Test Evaluation — Smart Alert Tooltip</h1>
 
-# ✅ **Project 01: A/B Test Evaluation (Smart Alert Tooltip)**  
+<p align="center">
+  <strong>Product Analytics Portfolio — Project 01</strong>
+</p>
 
+<p align="center">
+  <!-- Badges -->
+  <img src="https://img.shields.io/badge/Python-3.10-blue">
+  <img src="https://img.shields.io/badge/SQL-DuckDB-yellow">
+  <img src="https://img.shields.io/badge/Jupyter-Notebook-orange">
+  <img src="https://img.shields.io/badge/Statsmodels-ZTest-green">
+</p>
 
 ---
 
-# **A/B Test Evaluation — Smart Alert Tooltip**  
-### **Product Analytics Portfolio — Project 01**
+# 📌 Navigation
 
-This project evaluates whether introducing a **Smart Alert Tooltip** improves **Day‑7 Engagement** for IoT device managers.  
-The analysis is performed using **Python**, **DuckDB SQL**, and **statistical testing**.
+- [1. Overview](#-1-overview)
+- [2. Dataset](#-2-dataset)
+- [3. Methodology](#-3-methodology)
+- [4. Key Visuals](#-4-key-visuals)
+- [5. Results Summary](#-5-results-summary)
+- [6. Business Impact](#-6-business-impact)
+- [7. Recommendation](#-7-recommendation)
+- [8. Tech Stack](#-8-tech-stack)
+- [9. Repository Structure](#-9-repository-structure)
+- [10. How to Run](#-10-how-to-run)
 
 ---
 
-## **📌 1. Experiment Overview**
+# 🎯 1. Overview
 
-The Smart Alert Tooltip is designed to help users better understand a key feature in the IoT dashboard.  
-The goal of this experiment is to determine whether the tooltip increases user engagement.
+This project evaluates whether introducing a **Smart Alert Tooltip** in an IoT device management dashboard improves **Day‑7 Engagement**.
 
-### **Hypothesis**  
-The tooltip will increase **Day‑7 Engagement** by nudging users toward the feature and improving comprehension.
+### **Hypothesis**
+> Users exposed to the tooltip (Group B) will show higher Day‑7 engagement than users in the control group (Group A).
 
-### **Primary Metric**  
+### **Primary Metric**
 - **Day‑7 Engagement** (binary)
 
-### **Secondary Metrics**  
+### **Secondary Metrics**
 - Feature usage  
 - Average session time  
 
-### **Guardrail Metrics**  
+### **Guardrail Metrics**
 - Error rate  
 - Page load time  
 
-### **Success Criteria**  
-- Statistically significant improvement in Day‑7 engagement  
-- No degradation in guardrails  
-- Consistent effect across countries  
+---
+
+# 📁 2. Dataset
+
+A synthetic dataset of **10,000 users** was generated to simulate a realistic IoT SaaS experiment.
+
+| Column | Description |
+|--------|-------------|
+| user_id | Unique user identifier |
+| group | A (control) or B (treatment) |
+| country | User region |
+| signup_date | Date of signup |
+| day7_engaged | Primary metric |
+| feature_used | Secondary metric |
+| avg_session_time | Avg session duration |
+| error_rate | Guardrail metric |
+| page_load_ms | Guardrail metric |
+
+📄 **Dataset:** `data/ab_test_data.csv`  
+📓 **Notebook:** `notebooks/ab_test_analysis.ipynb`  
+🗄 **SQL:** `sql/analysis.sql`
 
 ---
 
-## **📌 2. Dataset**
+# 🧪 3. Methodology
 
-The dataset contains **10,000 users**, randomly assigned to:
+### ✔ Randomization checks  
+Ensured country distribution and signup dates were balanced.
 
-- **Group A** (control)  
-- **Group B** (treatment)
+### ✔ Primary metric analysis  
+- Conversion rate comparison  
+- Two‑proportion Z‑test  
+- 95% confidence interval estimation  
+- Lift calculation  
 
-Each row includes:
+### ✔ Secondary metrics  
+- Feature usage  
+- Session time  
 
-- user_id  
-- group  
-- country  
-- signup_date  
-- day7_engaged  
-- feature_used  
-- avg_session_time  
-- error_rate  
-- page_load_ms  
-
-The dataset was generated programmatically for portfolio purposes.
+### ✔ Guardrails  
+- Error rate  
+- Page load time  
 
 ---
 
-## **📌 3. Randomization Check**
+# 📊 4. Key Visuals
 
-Countries are evenly distributed across groups A and B.  
-This confirms that randomization worked correctly and there is no allocation bias.
+> Replace the image links below with your actual charts from the notebook.
 
----
+### **Conversion Rate (A vs B)**  
+![Conversion Rate](charts/conversion_rate.png)
 
-## **📌 4. Primary Metric — Day‑7 Engagement**
+### **95% Confidence Intervals**  
+![CI Plot](01-ab-test-evaluation\charts\CI.png)
 
-| Group | Conversion Rate |
-|-------|-----------------|
-| A | 21.77% |
-| B | 23.60% |
+### **Lift Chart**  
+![Lift Chart](01-ab-test-evaluation\charts\lift.png)
 
-**Lift:** ~8.4%  
-**p‑value:** < 0.05 (statistically significant)
+### **Feature Usage Comparison**  
+![Feature Usage](01-ab-test-evaluation\charts\feature_usage.png)
 
-**Interpretation:**  
-Treatment B shows a meaningful and statistically significant improvement in Day‑7 engagement.
-
----
-
-## **📌 5. Feature Usage Analysis**
-
-| Group | Feature Usage Rate |
-|-------|--------------------|
-| A | ~18% |
-| B | ~26% |
-
-**Interpretation:**  
-Feature usage increased substantially in Group B, strongly suggesting that the tooltip successfully nudges users toward the feature.  
-This likely explains the engagement lift.
+### **Guardrail Metrics**  
+![Guardrails](01-ab-test-evaluation\charts\guardrails.png)
 
 ---
 
-## **📌 6. Guardrail Metrics**
+# 📈 5. Results Summary
 
-| Metric | A | B | Interpretation |
-|--------|---|---|----------------|
-| Error Rate | 0.012552 | 0.012578 | Safe |
-| Page Load Time | 329.26 ms | 328.62 ms | Safe |
+### **Primary Metric — Day‑7 Engagement**
+- **Group A:** X%  
+- **Group B:** Y%  
+- **Lift:** Z%  
+- **p‑value:** < 0.05 → statistically significant  
 
-**Interpretation:**  
-No performance or reliability degradation.  
-Guardrails remain stable.
+### **Secondary Metrics**
+- Feature usage increased in Group B  
+- Session time increased in Group B  
 
----
-
-## **📌 7. Session Time Comparison**
-
-Group B shows slightly higher average session time, consistent with deeper engagement and increased feature usage.
-
----
-
-## **📌 8. Country‑Level Consistency**
-
-Conversion rates were evaluated across DE, IN, US, UK, and FR.  
-The lift is consistent across all countries, and no segment shows a negative effect.
-
-This strengthens confidence in rolling out the feature globally.
+### **Guardrails**
+- Error rate stable  
+- Page load time unchanged  
 
 ---
 
-## **📌 9. Final Recommendation**
+# 💼 6. Business Impact
 
-### **✔ Roll Out Treatment B to 100% of Users**
+The Smart Alert Tooltip directly improves the **core value loop** of the IoT platform:
 
-**Reasons:**
+### **1. Faster issue resolution**  
+Users understand alerts more quickly → fewer misconfigurations → fewer escalations.
 
-- ~8.4% improvement in Day‑7 engagement  
-- Statistically significant  
-- Strong increase in feature usage  
-- Guardrails remain safe  
-- Effect consistent across countries  
-- No performance degradation  
+### **2. Higher product stickiness**  
+Improved Day‑7 engagement is strongly correlated with long‑term retention in SaaS.
 
-This is a **low‑risk, high‑impact** improvement.
+### **3. Better device reliability**  
+Clearer alerts → fewer repeated errors → lower operational overhead.
+
+### **4. Scalable impact**  
+A tooltip is a low‑cost UI enhancement with high leverage across all device managers.
+
+This experiment demonstrates that **small UX improvements can drive meaningful behavioral change**.
 
 ---
 
-## **📌 10. Tools & Technologies**
+# ✅ 7. Recommendation
 
-- **Python** (Pandas, NumPy, SciPy, Statsmodels)  
-- **DuckDB SQL**  
-- **Matplotlib / Seaborn**  
+Based on the statistically significant improvement in Day‑7 engagement and no negative impact on guardrails:
+
+> **Roll out the Smart Alert Tooltip to 100% of users.**
+
+---
+
+# 🛠 8. Tech Stack
+
+- **Python** (pandas, numpy, statsmodels, scipy)  
 - **Jupyter Notebook**  
-- **GitHub**  
+- **Seaborn / Matplotlib**  
+- **DuckDB** (SQL analysis)  
+- **SQL**  
 
 ---
 
-## **📌 11. Repository Structure**
-
-```
-project/
-│
-├── data/
-│   └── ab_test_data.csv
-│
-├── sql/
-│   └── analysis.sql
-│
-├── notebook/
-│   └── ab_test_evaluation.ipynb
-│
-└── README.md
-```
-
----
-
-## **📌 12. Key Takeaways**
-
-- Demonstrates end‑to‑end A/B test evaluation  
-- Combines SQL + Python + statistical testing  
-- Shows product thinking and decision‑making  
-- Includes guardrail analysis and segmentation  
-- Portfolio‑ready case study for product analytics roles  
+# 📂 9. Repository Structure
 
