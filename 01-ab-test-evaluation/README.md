@@ -174,4 +174,34 @@ Based on the statistically significant improvement in Day‑7 engagement and no 
 ---
 
 # 📂 9. Repository Structure
+```
+01-ab-test-evaluation/
+│
+├── data/
+│   └── ab_test_data.csv
+│
+├── notebooks/
+│   └── ab_test_analysis.ipynb
+│
+├── sql/
+│   └── analysis.sql
+│
+├── charts/
+│   ├── conversion_rate.png
+│   ├── ci_plot.png
+│   ├── lift_chart.png
+│   └── feature_usage.png
+│
+└── README.md
+```
 
+---
+
+# ▶️ 10. How to Run
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Launch notebook
+jupyter notebook or run .ipynb file
